@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">WellnessCity</string>
+    <string name="project_group">mobile-health-03</string>
+    <string name="project_name">WellnessCity</string>
 </resources>
