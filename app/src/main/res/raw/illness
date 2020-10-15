@@ -1,0 +1,94 @@
+{
+"conditions_with_symptoms":[
+{
+"id":1,
+"condition":"Influenza- commonly called Flu",
+"img_url":"",
+"desc":"Influenza is a viral infection that attacks your respiratory system — your nose, throat and lungs",
+"causes":[""],
+"symptoms":["Fever","Aching muscles","chills and sweats","Headache","Dry persistent cough","shortness of breath","Tiredness and weakness","Runny or stuffy nose","Sore throat","Eye pain","Vomitting and diarrhea"],
+"Treatment":"P.S: See a doctor for proper prescription and tretment. Taking antiviral drugs may reduce the length of your illness and help prevent more-serious problems."
+},
+{
+"id":2,
+"condition":"Depression",
+"img_url":"",
+"desc":"Depression is classified as a mood disorder. It may be described as feelings of sadness, loss, or anger that interfere with a person’s everyday activities.",
+"causes":["Early childhood trauma","Family history","Brain structure","Medical conditions","Drug use"],
+"symptoms":["anger", "aggressiveness", "irritability", "anxiousness", "restlessness","feeling empty", "sad", "hopeless","drinking excessively", "using drugs","loss of interest"],
+"Treatment":"P.S: Talk to a healthCare provider. Psycotherapy, antidepressants, antianxiety, antipsychotic medications and excersis can help"
+},
+{
+"id":3,
+"condition":"Diarrhoea",
+"img_url":"",
+"desc":"Diarrhoea is passing loose or watery bowel movements 3 or more times in a day (or more frequently than usual).",
+"causes":["Infection","Change in diet", "food intolerance", "excess alcohol", "bowel conditions", "Some medicines"],
+"symptoms":["painful abdominal cramps", "nausea", "fever", "bloating", "generalised weakness"],
+"Treatment":"Take plenty of fluids, retrict diet, see a health specialist if symptoms persist"
+},
+{
+"id":4,
+"condition":"Malaria",
+"img_url":"",
+"desc":"Malaria is a life-threatening disease. It’s typically transmitted through the bite of an infected Anopheles mosquito.",
+"causes":["Mosquitoe bite","use of shared needle","organ trasplant"],
+"symptoms":["Fever", "Chills", "Headache", "Sweats", "Fatigue", "Nausea", "Vomitting", "Body aches"],
+"Treatment":"Treatment for the disease is typically provided in a hospital. Your doctor will prescribe medications based on the type of parasite that you have."
+},
+{
+"id":5,
+"condition":"Typhoid",
+"img_url":"",
+"desc":"Typhoid is a bacterial infection that can lead to a high fever, diarrhea, and vomiting. It can be fatal.",
+"causes":[""],
+"symptoms":["rash","weakness","abdominal pain", "constipation", "headache", "confusion", "vomitting"],
+"Treatment":"P.S: See a Doctor. The only effective treatment for typhoid is antibiotics. The most commonly used are ciprofloxacin (for non-pregnant adults) and ceftriaxone. Other than antibiotics, it is important to rehydrate by drinking adequate water. In more severe cases, where the bowel has become perforated, surgery may be required."
+},
+{
+"id":6,
+"condition":"Asthma",
+"img_url":"",
+"desc":"Asthma is an inflammatory disease of the airways to the lungs. It makes breathing difficult and can make some physical activities challenging or even impossible.",
+"causes":["Genetics", "History of viral infections", "Hygiene hypothesis"],
+"symptoms":["coughing, especially at night, when laughing, or during exercise", "tightness in the chest", "shortness of breath", "difficulty talking", "anxiousness or panic", "fatigue"],
+"Treatment":"breathing exercises, quick-acting treatments, long-term asthma control medications, Your doctor will recommend one treatment or combination of treatments based on the type of asthma you have, your age, your triggers"
+},
+{
+"id":7,
+"condition":"Diabetes",
+"img_url":"",
+"desc":"Diabetes mellitus, commonly known as diabetes, is a metabolic disease that causes high blood sugar.",
+"causes":["over weight", "Not physically active"],
+"symptoms":["increased hunger", "increased thirst", "weight loss", "frequent urination", "blurry vision", "extreme fatigue", "sores that don’t heal"],
+"Treatment":"Doctors treat diabetes with a few different medications"
+},
+{
+"id":8,
+"condition":"Coronavirus disease",
+"img_url":"",
+"desc":"Coronaviruses are a family of viruses that can cause illnesses such as the common cold, severe acute respiratory syndrome (SARS) and Middle East respiratory syndrome (MERS).",
+"causes":[""],
+"symptoms":["fever", "dry cover", "tiredness"],
+"Treatment":"Tell your health care team about your symptoms and possible exposure before you go to your appointment."
+},
+{
+"id":9,
+"condition":"Athritis",
+"img_url":"",
+"desc":"Arthritis is the swelling and tenderness of one or more of your joints.",
+"causes":[""],
+"symptoms":["joint pain", "stiffness", "swelling"],
+"Treatment":"Analgesics, Nonsteroidal anti-inflammatory drugs (NSAIDs), Menthol or capsaicin creams, Immunosuppressants like prednisone or cortisone help reduce inflammation."
+},
+{
+"id":10,
+"condition":"Autism",
+"img_url":"",
+"desc":"Autism spectrum disorder (ASD) is a developmental disability  that can cause significant social, communication and behavioral challenges. There is often nothing about how people with ASD look that sets them apart from other people, but people with ASD may communicate, interact, behave, and learn in ways that are different from most other people.",
+"causes":[""],
+"symptoms":[""],
+"Treatment":"Currently, no treatment has been shown to cure ASD, but several interventions have been developed and studied for use with young children."
+}
+]
+}
