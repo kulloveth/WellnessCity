@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 30
@@ -24,7 +25,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions{
+    compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
@@ -33,6 +34,7 @@ android {
 dependencies {
     //hilt
     implementation "com.google.dagger:hilt-android:$hilt_version"
+    implementation 'com.google.firebase:firebase-firestore:21.5.0'
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
 
     //timber
