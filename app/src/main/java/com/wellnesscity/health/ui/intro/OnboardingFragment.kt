@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.wellnesscity.health.R
 import com.wellnesscity.health.databinding.FragmentOnboardingBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.fragment_onboarding.view.*
 
 
 @AndroidEntryPoint
@@ -19,13 +20,10 @@ class OnboardingFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentOnboardingBinding.inflate(layoutInflater)
-        return binding?.root
+       return binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
     }
-
 }
