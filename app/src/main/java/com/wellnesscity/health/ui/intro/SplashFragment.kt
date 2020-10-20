@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.wellnesscity.health.R
+import com.wellnesscity.health.data.FirebaseService
 import com.wellnesscity.health.databinding.FragmentSplashBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -18,6 +19,8 @@ class SplashFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        FirebaseService(requireContext())
         // Inflate the layout for this fragment
         binding = FragmentSplashBinding.inflate(layoutInflater)
         return binding?.root
