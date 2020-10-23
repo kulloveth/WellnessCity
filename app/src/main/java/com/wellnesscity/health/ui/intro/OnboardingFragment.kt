@@ -1,5 +1,6 @@
 package com.wellnesscity.health.ui.intro
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.wellnesscity.health.R
 import com.wellnesscity.health.databinding.FragmentOnboardingBinding
+import com.wellnesscity.health.ui.activity.FeatureActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_onboarding.view.*
 
@@ -48,7 +50,7 @@ class OnboardingFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentOnboardingBinding.inflate(layoutInflater)
-       return binding?.root
+        return binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -61,12 +63,24 @@ class OnboardingFragment : Fragment() {
                 override fun onPageSelected(position: Int) {
                     super.onPageSelected(position)
                     if (position == introSliderAdapter.itemCount - 1) {
-                        val animation = AnimationUtils.loadAnimation(requireActivity(), R.anim.app_name_animation)
+                        val animation = AnimationUtils.loadAnimation(
+                            requireActivity(),
+                            R.anim.app_name_animation
+                        )
                         binding?.buttonNext?.animation = animation
                         binding?.buttonNext?.text = "Finish"
+                        binding?.buttonNext?.setOnClickListener {
+                            requireActivity().finish()
+                            requireActivity().startActivity(
+                                Intent(
+                                    requireActivity(),
+                                    FeatureActivity::class.java
+                                )
+                            )
+                        }
+                    }
                 }
-            }
-    })
+            })
     }
 
 }
