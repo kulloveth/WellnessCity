@@ -20,7 +20,7 @@ class SplashFragment : Fragment() {
     private val handler = Handler()
     private val runnable = Runnable {
         requireView().findNavController()
-            .navigate(R.id.action_splashFragment_to_onboardingFragment)
+            .navigate(SplashFragmentDirections.actionSplashFragmentToOnboardingFragment())
     }
 
     override fun onCreateView(

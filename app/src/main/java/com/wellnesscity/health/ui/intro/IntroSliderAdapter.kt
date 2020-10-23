@@ -1,23 +1,16 @@
 package com.wellnesscity.health.ui.intro
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.wellnesscity.health.R
+import com.wellnesscity.health.databinding.SlideItemContainerBinding
 
 class IntroSliderAdapter(private val introSlides: List<IntroSlide>)
     : RecyclerView.Adapter<IntroSliderAdapter.IntroSlideViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IntroSlideViewHolder {
         return IntroSlideViewHolder(
-            LayoutInflater.from(parent.context).inflate(
-                R.layout.slide_item_container,
-                parent,
-                false
-            )
+            SlideItemContainerBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         )
     }
 
@@ -29,16 +22,13 @@ class IntroSliderAdapter(private val introSlides: List<IntroSlide>)
         holder.bind(introSlides[position])
     }
 
-    inner class IntroSlideViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-
-        private val textTitle = view.findViewById<TextView>(R.id.textTitle)
-        private val textDescription = view.findViewById<TextView>(R.id.textDescription)
-        private val imageIcon = view.findViewById<ImageView>(R.id.imageSlideIcon)
+    inner class IntroSlideViewHolder(private val binding: SlideItemContainerBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(introSlide: IntroSlide) {
-            textTitle.text = introSlide.title
-            textDescription.text = introSlide.description
-            imageIcon.setImageResource(introSlide.icon)
+            binding.textTitle.text = introSlide.title
+            binding.textDescription.text = introSlide.description
+            binding.imageSlideIcon.imageAssetsFolder = "images";
+            binding.imageSlideIcon.setAnimation(introSlide.icon)
         }
     }
 }

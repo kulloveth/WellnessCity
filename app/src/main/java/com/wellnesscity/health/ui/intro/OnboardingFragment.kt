@@ -45,11 +45,14 @@ class OnboardingFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        binding = FragmentOnboardingBinding.inflate(layoutInflater)
        return binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding?.viewPager?.adapter = introSliderAdapter
+        binding?.indicator?.setViewPager(binding?.viewPager)
     }
 
 }

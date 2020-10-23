@@ -55,6 +55,7 @@ dependencies {
     implementation "androidx.viewpager2:viewpager2:1.0.0"
     //indicator
     implementation 'me.relex:circleindicator:2.1.4'
+    implementation "com.airbnb.android:lottie:$lottieVersion"
 
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
