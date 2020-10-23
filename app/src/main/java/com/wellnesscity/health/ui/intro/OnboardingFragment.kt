@@ -5,11 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.LinearLayout.*
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.viewpager2.widget.ViewPager2
 import com.wellnesscity.health.R
 import com.wellnesscity.health.databinding.FragmentOnboardingBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -53,6 +55,18 @@ class OnboardingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding?.viewPager?.adapter = introSliderAdapter
         binding?.indicator?.setViewPager(binding?.viewPager)
+        binding?.viewPager?.registerOnPageChangeCallback(
+            object : ViewPager2.OnPageChangeCallback() {
+
+                override fun onPageSelected(position: Int) {
+                    super.onPageSelected(position)
+                    if (position == introSliderAdapter.itemCount - 1) {
+                        val animation = AnimationUtils.loadAnimation(requireActivity(), R.anim.app_name_animation)
+                        binding?.buttonNext?.animation = animation
+                        binding?.buttonNext?.text = "Finish"
+                }
+            }
+    })
     }
 
 }
