@@ -52,25 +52,4 @@ class OnboardingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
     }
 
-    private fun setupIndicators() {
-        val indicators = arrayOfNulls<ImageView>(introSliderAdapter.itemCount)
-        val layoutParams: LayoutParams =
-            LayoutParams(WRAP_CONTENT, WRAP_CONTENT)
-        layoutParams.setMargins(8,0,8,0)
-        for(i in indicators.indices) {
-            indicators[i] = ImageView(applicationContext)
-            indicators[i].apply {
-                this?.setImageDrawable(
-                    ContextCompat.getDrawable(
-                        applicationContext,
-                        R.drawable.indicator_inactive
-                    )
-                )
-                this?.layoutParams = layoutParams
-            }
-            indicatorsConta
-            iner.addView(indicators[i])
-        }
-
-    }
 }
