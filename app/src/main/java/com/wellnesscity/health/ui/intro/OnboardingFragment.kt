@@ -5,19 +5,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.view.animation.AnimationUtils
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.LinearLayout.*
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.wellnesscity.health.R
 import com.wellnesscity.health.databinding.FragmentOnboardingBinding
-import com.wellnesscity.health.ui.activity.FeatureActivity
+import com.wellnesscity.health.ui.welcome.WelcomeFragment
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_onboarding.view.*
 
 
 @AndroidEntryPoint
@@ -70,13 +65,7 @@ class OnboardingFragment : Fragment() {
                         binding?.buttonNext?.animation = animation
                         binding?.buttonNext?.text = "Finish"
                         binding?.buttonNext?.setOnClickListener {
-                            requireActivity().finish()
-                            requireActivity().startActivity(
-                                Intent(
-                                    requireActivity(),
-                                    FeatureActivity::class.java
-                                )
-                            )
+                            requireView().findNavController().navigate(OnboardingFragmentDirections.actionOnboardingFragmentToWelcomeFragment())
                         }
                     }else{
                         binding?.buttonNext?.text = "Next"
