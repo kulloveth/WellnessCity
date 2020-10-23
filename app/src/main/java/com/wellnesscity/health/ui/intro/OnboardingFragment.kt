@@ -78,6 +78,14 @@ class OnboardingFragment : Fragment() {
                                 )
                             )
                         }
+                    }else{
+                        binding?.buttonNext?.text = "Next"
+                        binding?.buttonNext?.setOnClickListener {
+          binding?.viewPager?.currentItem?.let {
+                                val p = it
+                                binding?.viewPager?.setCurrentItem(p+1, false)
+                            }
+                        }
                     }
                 }
             })
