@@ -3,7 +3,7 @@
 {
 "id":1,
 "condition":"Influenza- commonly called Flu",
-"img_url":"",
+"img_url":"https://firebasestorage.googleapis.com/v0/b/wellnesscity-efcc6.appspot.com/o/illness%2Fflu.png?alt=media&token=e89fa5e6-9b1e-4155-8933-710be582c625",
 "desc":"Influenza is a viral infection that attacks your respiratory system — your nose, throat and lungs",
 "causes":[""],
 "symptoms":["Fever","Aching muscles","chills and sweats","Headache","Dry persistent cough","shortness of breath","Tiredness and weakness","Runny or stuffy nose","Sore throat","Eye pain","Vomitting and diarrhea"],
@@ -12,7 +12,7 @@
 {
 "id":2,
 "condition":"Depression",
-"img_url":"",
+"img_url":"https://firebasestorage.googleapis.com/v0/b/wellnesscity-efcc6.appspot.com/o/illness%2Fdepression.png?alt=media&token=b01d1ad2-09a1-4d4b-b52a-099c081cbf99",
 "desc":"Depression is classified as a mood disorder. It may be described as feelings of sadness, loss, or anger that interfere with a person’s everyday activities.",
 "causes":["Early childhood trauma","Family history","Brain structure","Medical conditions","Drug use"],
 "symptoms":["anger", "aggressiveness", "irritability", "anxiousness", "restlessness","feeling empty", "sad", "hopeless","drinking excessively", "using drugs","loss of interest"],
@@ -21,7 +21,7 @@
 {
 "id":3,
 "condition":"Diarrhoea",
-"img_url":"",
+"img_url":"https://firebasestorage.googleapis.com/v0/b/wellnesscity-efcc6.appspot.com/o/illness%2Fdiarrhoea.png?alt=media&token=3de54974-251d-4dd0-8414-dbdd5309781d",
 "desc":"Diarrhoea is passing loose or watery bowel movements 3 or more times in a day (or more frequently than usual).",
 "causes":["Infection","Change in diet", "food intolerance", "excess alcohol", "bowel conditions", "Some medicines"],
 "symptoms":["painful abdominal cramps", "nausea", "fever", "bloating", "generalised weakness"],
@@ -30,7 +30,7 @@
 {
 "id":4,
 "condition":"Malaria",
-"img_url":"",
+"img_url":"https://firebasestorage.googleapis.com/v0/b/wellnesscity-efcc6.appspot.com/o/illness%2Fmalaria.png?alt=media&token=3013c24e-4c49-4555-b45b-9988ee73574a",
 "desc":"Malaria is a life-threatening disease. It’s typically transmitted through the bite of an infected Anopheles mosquito.",
 "causes":["Mosquitoe bite","use of shared needle","organ trasplant"],
 "symptoms":["Fever", "Chills", "Headache", "Sweats", "Fatigue", "Nausea", "Vomitting", "Body aches"],
@@ -39,7 +39,7 @@
 {
 "id":5,
 "condition":"Typhoid",
-"img_url":"",
+"img_url":"https://firebasestorage.googleapis.com/v0/b/wellnesscity-efcc6.appspot.com/o/illness%2Ftyphoid.jpg?alt=media&token=4713d154-2299-4048-8964-12fb69ba415b",
 "desc":"Typhoid is a bacterial infection that can lead to a high fever, diarrhea, and vomiting. It can be fatal.",
 "causes":[""],
 "symptoms":["rash","weakness","abdominal pain", "constipation", "headache", "confusion", "vomitting"],
@@ -48,7 +48,7 @@
 {
 "id":6,
 "condition":"Asthma",
-"img_url":"",
+"img_url":"https://firebasestorage.googleapis.com/v0/b/wellnesscity-efcc6.appspot.com/o/illness%2Fasthma.png?alt=media&token=75e3c44f-c2cb-4631-9818-5cbcec5ea6a5",
 "desc":"Asthma is an inflammatory disease of the airways to the lungs. It makes breathing difficult and can make some physical activities challenging or even impossible.",
 "causes":["Genetics", "History of viral infections", "Hygiene hypothesis"],
 "symptoms":["coughing, especially at night, when laughing, or during exercise", "tightness in the chest", "shortness of breath", "difficulty talking", "anxiousness or panic", "fatigue"],
@@ -57,7 +57,7 @@
 {
 "id":7,
 "condition":"Diabetes",
-"img_url":"",
+"img_url":"https://firebasestorage.googleapis.com/v0/b/wellnesscity-efcc6.appspot.com/o/illness%2Fdiabetes.png?alt=media&token=d728b6ba-084e-4629-b868-f46f6d2320d0",
 "desc":"Diabetes mellitus, commonly known as diabetes, is a metabolic disease that causes high blood sugar.",
 "causes":["over weight", "Not physically active"],
 "symptoms":["increased hunger", "increased thirst", "weight loss", "frequent urination", "blurry vision", "extreme fatigue", "sores that don’t heal"],
@@ -66,7 +66,7 @@
 {
 "id":8,
 "condition":"Coronavirus disease",
-"img_url":"",
+"img_url":"https://firebasestorage.googleapis.com/v0/b/wellnesscity-efcc6.appspot.com/o/illness%2Fcovid.jpg?alt=media&token=e5629cad-9816-49c0-8526-2fa0c845aa2a",
 "desc":"Coronaviruses are a family of viruses that can cause illnesses such as the common cold, severe acute respiratory syndrome (SARS) and Middle East respiratory syndrome (MERS).",
 "causes":[""],
 "symptoms":["fever", "dry cover", "tiredness"],
@@ -75,7 +75,7 @@
 {
 "id":9,
 "condition":"Athritis",
-"img_url":"",
+"img_url":"https://firebasestorage.googleapis.com/v0/b/wellnesscity-efcc6.appspot.com/o/illness%2Farthritis.jpg?alt=media&token=e5499ddf-fcda-44ad-9315-c383ee33e0f4",
 "desc":"Arthritis is the swelling and tenderness of one or more of your joints.",
 "causes":[""],
 "symptoms":["joint pain", "stiffness", "swelling"],
@@ -84,7 +84,7 @@
 {
 "id":10,
 "condition":"Autism",
-"img_url":"",
+"img_url":"https://firebasestorage.googleapis.com/v0/b/wellnesscity-efcc6.appspot.com/o/illness%2Fautism.jpg?alt=media&token=d7f72f2b-8244-4c9d-89c4-f20eec98986b",
 "desc":"Autism spectrum disorder (ASD) is a developmental disability  that can cause significant social, communication and behavioral challenges. There is often nothing about how people with ASD look that sets them apart from other people, but people with ASD may communicate, interact, behave, and learn in ways that are different from most other people.",
 "causes":[""],
 "symptoms":[""],
