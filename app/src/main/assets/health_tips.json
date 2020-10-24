@@ -4,61 +4,61 @@
 "id":1,
 "topic":"Consume less salt",
 "detail":"Excess Salt intake can lead to high blood pressure which is linked to conditions like hear failure and heart attack, kidney problems, stroke",
-"icon_url":""
+"icon_url":"https://firebasestorage.googleapis.com/v0/b/wellnesscity-efcc6.appspot.com/o/health_tips%2Fsalt.jpg?alt=media&token=2a9cadf5-86b6-44eb-8ad2-2ecbfbdbbc60"
 },
 {
 "id":2,
 "topic":"Consume less sugar",
 "detail":"Many research has proved that sugar increases diabetes risk both directly and directly, its important to avoid added sugar especially from sugar-sweetened beverages",
-"icon_url":""
+"icon_url":"https://firebasestorage.googleapis.com/v0/b/wellnesscity-efcc6.appspot.com/o/health_tips%2Fsugar.jpg?alt=media&token=e78b07a1-72ee-4276-b35b-0c176bdae60e"
 },
 {
 "id":3,
 "topic":"Reduce intake of Harmful fat",
 "detail":"Eating too much saturated fats in your diet and can raise bad LDL cholesterol in your blood which can increase the risk of heart disease and stroke",
-"icon_url":""
+"icon_url":"https://firebasestorage.googleapis.com/v0/b/wellnesscity-efcc6.appspot.com/o/health_tips%2Ffat.jpg?alt=media&token=a11a63bd-cbb4-4379-bf4a-0ac7c599a053"
 },
 {
 "id":4,
 "topic":"Avoid smoking",
 "detail":"Smoking causes heard disease,cancer,stroke,lung disease and COPD. It also increases risk of tuberclosis,certain eye diseases and problems of the immune system",
-"icon_url":""
+"icon_url":"https://firebasestorage.googleapis.com/v0/b/wellnesscity-efcc6.appspot.com/o/health_tips%2Fsmoking.jpg?alt=media&token=654d75d7-7004-4a5a-b756-a6cd94c0ecc8"
 },
 {
 "id":5,
 "topic":"Drink a glass of Water first thing in the morning",
 "detail":"Drinking water improves the creation of new blood cells and muscle cells and helps in loosing weight",
-"icon_url":""
+"icon_url":"https://firebasestorage.googleapis.com/v0/b/wellnesscity-efcc6.appspot.com/o/health_tips%2Fwater.png?alt=media&token=9202ee3c-afa9-4d73-9c95-ac798647a5d2"
 },
 {
 "id":6,
 "topic":"Exercise your body regularly",
-"detail":"excercising helps you maintain a health body and wait and reduce fats in the body",
-"icon_url":""
+"detail":"exercising helps you maintain a health body and wait and reduce fats in the body",
+"icon_url":"https://firebasestorage.googleapis.com/v0/b/wellnesscity-efcc6.appspot.com/o/health_tips%2Fexercise.png?alt=media&token=078877ea-1f83-40cd-8667-e3a714e6caf1"
 },
 {
 "id":7,
 "topic":"Beware of your skin care product",
 "detail":"Avoid toxic skin care products which contains harmful chemicals that endangers your skin",
-"icon_url":""
+"icon_url":"https://firebasestorage.googleapis.com/v0/b/wellnesscity-efcc6.appspot.com/o/health_tips%2Fskin.jpg?alt=media&token=293cf527-ecd4-4b95-9994-bb1b3d7022c7"
 },
 {
 "id":8,
 "topic":"Get Enough Sleep",
 "detail":"Getting enough sleep lowers your risk of serious health problems, reduce stress and improve your mood. Endeavour to get atleast eight(8) hours of sleep daily",
-"icon_url":""
+"icon_url":"https://firebasestorage.googleapis.com/v0/b/wellnesscity-efcc6.appspot.com/o/health_tips%2Fsleep.png?alt=media&token=9f235dcd-b31c-4a25-b449-41a88143e9cc"
 },
 {
 "id":9,
 "topic":"Eat fruits Daily",
 "detail":"Fruits contain vitamins and minerals that help that hep protect an energize the body. Normalize fruits like pawpaw,strawberries,pineapple,apple,watermelon,orange",
-"icon_url":""
+"icon_url":"https://firebasestorage.googleapis.com/v0/b/wellnesscity-efcc6.appspot.com/o/health_tips%2Ffruits.jpg?alt=media&token=908dcbd2-6f64-4944-b803-cfc1eb77ea67"
 },
 {
 "id":10,
 "topic":"Eat enough vegetables",
 "detail":"Vegetables are the source of many nutrients and minerals,Having a variety of vegetable intakes strenghtens your immune system and helps fight against diseases and infections",
-"icon_url":""
+"icon_url":"https://firebasestorage.googleapis.com/v0/b/wellnesscity-efcc6.appspot.com/o/health_tips%2Fvegetable.jpg?alt=media&token=5c7d1907-5aac-469e-b9ac-6e0e067133b2"
 }
 ]
 }

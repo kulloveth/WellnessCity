@@ -1,7 +1,8 @@
-package com.wellnesscity.health
+package com.wellnesscity.health.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.wellnesscity.health.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
