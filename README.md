@@ -3,7 +3,8 @@ A GADS Community Project to help user stay healthy, get Health and Diet tips/adv
 <table>
     <tr>
       <td>
-        ![Slide](https://github.com/kulloveth/WellnessCity/blob/master/app/screenshots/Wcity.gif)
+          
+   ![Slide](https://github.com/kulloveth/WellnessCity/blob/master/app/screenshots/Wcity.gif)
   </td>
   </tr>
   </table>
