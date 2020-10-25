@@ -6,22 +6,35 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import androidx.datastore.DataStore
+import androidx.datastore.preferences.Preferences
+import androidx.datastore.preferences.preferencesKey
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavController
-import androidx.navigation.Navigation
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
-import com.wellnesscity.health.R
 import com.wellnesscity.health.databinding.FragmentSplashBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class SplashFragment : Fragment() {
     private var binding: FragmentSplashBinding? = null
+    @Inject lateinit var prefs:DataStore<Preferences>
     private val handler = Handler()
     private val runnable = Runnable {
-        requireView().findNavController()
-            .navigate(SplashFragmentDirections.actionSplashFragmentToOnboardingFragment())
-    }
+
+        lifecycleScope.launch {
+        prefs.data.collectLatest {
+            if (it[preferencesKey<Boolean>("onBoard")] == true)
+                requireView().findNavController()
+                    .navigate(SplashFragmentDirections.actionSplashFragmentToWelcomeFragment())
+            else
+                requireView().findNavController()
+                    .navigate(SplashFragmentDirections.actionSplashFragmentToOnboardingFragment())
+        }
+    }}
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

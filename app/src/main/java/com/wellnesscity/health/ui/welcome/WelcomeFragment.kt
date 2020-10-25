@@ -4,14 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import com.google.firebase.firestore.FirebaseFirestore
 import com.wellnesscity.health.R
 import com.wellnesscity.health.data.FirebaseServices
 import com.wellnesscity.health.databinding.FragmentWelcomeBinding
-import com.wellnesscity.health.util.setMenuBackgroundColor
 import com.wellnesscity.health.util.tint
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -38,6 +36,7 @@ class WelcomeFragment : Fragment() {
         //binding?.topBarTv?.text?.toString()?.subSequence(14,41).toString()
         //binding?.barIv?.load("https://firebasestorage.googleapis.com/v0/b/wellnesscity-efcc6.appspot.com/o/illness%2Farthritis.jpg?alt=media&token=e5499ddf-fcda-44ad-9315-c383ee33e0f4")
     }
+
 
 fun changeDrawableCOlor(){
     ResourcesCompat.getDrawable(resources,R.drawable.menu_bg,resources.newTheme())?.tint(requireContext(),R.color.menuTwo)
