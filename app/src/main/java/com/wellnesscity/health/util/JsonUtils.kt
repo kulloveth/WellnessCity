@@ -2,10 +2,8 @@ package com.wellnesscity.health.util
 
 import android.content.Context
 import com.google.gson.Gson
-import com.wellnesscity.health.data.model.IllnessObject
-import com.wellnesscity.health.data.model.ConditionsWithSymptom
-import com.wellnesscity.health.data.model.HealthObject
 import com.wellnesscity.health.data.model.HealthTipX
+import com.wellnesscity.health.data.model.IllnessObject
 import org.json.JSONObject
 import timber.log.Timber
 
