@@ -1,4 +1,6 @@
-package com.wellnesscity.health.data.models
+
+package com.wellnesscity.health.data.model
+
 
 data class HealthTipX(
     val detail: String,

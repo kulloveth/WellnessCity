@@ -67,6 +67,7 @@ dependencies {
     implementation 'me.relex:circleindicator:2.1.4'
     implementation "com.airbnb.android:lottie:$lottieVersion"
 
+    implementation 'com.google.code.gson:gson:2.8.6'
     implementation("io.coil-kt:coil:0.9.1")
 
     implementation fileTree(dir: "libs", include: ["*.jar"])
