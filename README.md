@@ -1,6 +1,12 @@
 # WellnessCity
 A GADS Community Project to help user stay healthy, get Health and Diet tips/advice and Covid 19 Regular Reminder to stay safe
-
+<table>
+    <tr>
+      <td>
+        ![Slide](https://github.com/kulloveth/WellnessCity/blob/master/app/screenshots/Wcity.gif)
+  </td>
+  </tr>
+  </table>
 # Contributing to WellnessCity
 You are welcome to contribute to WellnessCity Android app, follow the [Getting Started](#getting-started) guideline to make your first pull request
 
