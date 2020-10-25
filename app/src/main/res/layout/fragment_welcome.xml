@@ -14,11 +14,24 @@
         android:fontFamily="@font/montserrat"
         android:text="@string/titleText"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-        app:layout_constraintBottom_toTopOf="@id/health_tv"
+        app:layout_constraintBottom_toTopOf="@id/banner_tv"
         app:layout_constraintStart_toStartOf="@id/health_tv"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-    </TextView>
+    <TextView
+        android:id="@+id/banner_tv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/menu_width"
+        android:layout_marginStart="@dimen/standard_padding"
+        android:layout_marginEnd="@dimen/standard_padding"
+        android:background="@drawable/banner_bg"
+        android:drawableStart="@drawable/ic_bro"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center"
+        android:text="@string/bannerText"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@id/health_tv"
+        app:layout_constraintTop_toBottomOf="@id/top_bar_tv" />
 
     <TextView
         android:id="@+id/health_tv"
@@ -28,26 +41,26 @@
         android:background="@drawable/menu_bg"
         android:gravity="center"
         android:text="Health Tips"
-        android:textColor="@android:color/white"
+        android:textColor="@color/colorTextSecondary"
         app:layout_constraintBottom_toTopOf="@id/illness_tv"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/diet_tv"
-        app:layout_constraintTop_toBottomOf="@id/top_bar_tv" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/banner_tv" />
 
     <TextView
         android:id="@+id/diet_tv"
         android:layout_width="@dimen/menu_width"
         android:layout_height="@dimen/menu_width"
+        android:layout_marginStart="@dimen/half_standard_padding"
         android:layout_marginEnd="@dimen/half_standard_padding"
         android:background="@drawable/menu_bg"
-        android:layout_marginStart="@dimen/half_standard_padding"
         android:gravity="center"
         android:text="Diet Tips"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@id/covid_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/health_tv"
-        app:layout_constraintTop_toBottomOf="@id/top_bar_tv" />
+        app:layout_constraintTop_toBottomOf="@id/banner_tv" />
 
     <TextView
         android:id="@+id/illness_tv"

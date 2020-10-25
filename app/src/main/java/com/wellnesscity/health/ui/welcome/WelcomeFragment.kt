@@ -39,6 +39,8 @@ class WelcomeFragment : Fragment() {
 
 
 fun changeDrawableCOlor(){
+    ResourcesCompat.getDrawable(resources,R.drawable.menu_bg,resources.newTheme())?.tint(requireContext(),R.color.menuOne0)
+    binding?.healthTv?.setBackgroundDrawable(resources.getDrawable(R.drawable.menu_bg))
     ResourcesCompat.getDrawable(resources,R.drawable.menu_bg,resources.newTheme())?.tint(requireContext(),R.color.menuTwo)
     binding?.dietTv?.setBackgroundDrawable(resources.getDrawable(R.drawable.menu_bg))
     ResourcesCompat.getDrawable(resources,R.drawable.menu_bg,resources.newTheme())?.tint(requireContext(),R.color.menuThree)
