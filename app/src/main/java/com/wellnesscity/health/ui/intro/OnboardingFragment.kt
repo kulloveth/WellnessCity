@@ -1,23 +1,30 @@
 package com.wellnesscity.health.ui.intro
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import androidx.datastore.DataStore
+import androidx.datastore.preferences.Preferences
+import androidx.datastore.preferences.edit
+import androidx.datastore.preferences.preferencesKey
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.wellnesscity.health.R
 import com.wellnesscity.health.databinding.FragmentOnboardingBinding
-import com.wellnesscity.health.ui.welcome.WelcomeFragment
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 
 @AndroidEntryPoint
 class OnboardingFragment : Fragment() {
     private var binding: FragmentOnboardingBinding? = null
+    @Inject
+    lateinit var prefs: DataStore<Preferences>
 
     private val introSliderAdapter = IntroSliderAdapter(
         listOf(
@@ -65,19 +72,29 @@ class OnboardingFragment : Fragment() {
                         binding?.buttonNext?.animation = animation
                         binding?.buttonNext?.text = "Finish"
                         binding?.buttonNext?.setOnClickListener {
-                            requireView().findNavController().navigate(OnboardingFragmentDirections.actionOnboardingFragmentToWelcomeFragment())
+                            lifecycleScope.launch {
+                                saveOnboarding()
+                            }
+                            requireView().findNavController()
+                                .navigate(OnboardingFragmentDirections.actionOnboardingFragmentToWelcomeFragment())
                         }
-                    }else{
+                    } else {
                         binding?.buttonNext?.text = "Next"
                         binding?.buttonNext?.setOnClickListener {
-          binding?.viewPager?.currentItem?.let {
-                                val p = it
-                                binding?.viewPager?.setCurrentItem(p+1, false)
+                            binding?.viewPager?.currentItem?.let {
+                                binding?.viewPager?.setCurrentItem(it + 1, false)
                             }
                         }
                     }
                 }
             })
+    }
+
+    suspend fun saveOnboarding() {
+        prefs.edit {
+            val oneTime = true
+            it[preferencesKey<Boolean>("onBoard")] = oneTime
+        }
     }
 
 }
