@@ -1,8 +1,8 @@
 package com.wellnesscity.health.util
 
 import android.content.Context
-import com.wellnesscity.health.data.ConditionsWithSymptom
-import com.wellnesscity.health.data.HealthTipX
+import com.wellnesscity.health.data.models.ConditionsWithSymptom
+import com.wellnesscity.health.data.models.HealthTipX
 import org.json.JSONObject
 import timber.log.Timber
 

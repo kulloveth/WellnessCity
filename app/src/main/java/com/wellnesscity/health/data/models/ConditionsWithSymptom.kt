@@ -1,4 +1,4 @@
-package com.wellnesscity.health.data
+package com.wellnesscity.health.data.models
 
 data class ConditionsWithSymptom(
     val treatment: String = "",
