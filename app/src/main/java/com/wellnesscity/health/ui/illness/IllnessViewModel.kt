@@ -18,7 +18,7 @@ class IllnessViewModel @ViewModelInject constructor(private val firebaseServices
         firebaseServices.fetchData().addOnCompleteListener {
             if (it.isSuccessful) {
                 it.result?.let { result ->
-                    val i = result.documents[1]?.toObject(IllnessObject::class.java)
+                    val i = result.documents[0]?.toObject(IllnessObject::class.java)
                     i?.let {
                     _illnessLiveData.postValue(Resource.success(it.conditions))
                         Timber.d("${i.conditions}")
