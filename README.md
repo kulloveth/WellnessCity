@@ -8,7 +8,7 @@ A GADS Community Project to help user stay healthy, get Health and Diet tips/adv
   </td>
    <td>
 
-     ![Slide](https://github.com/kulloveth/WellnessCity/blob/master/app/screenshots/welcome.png)
+   ![Slide](https://github.com/kulloveth/WellnessCity/blob/master/app/screenshots/welcome.png)
     </td>
   </tr>
   </table>
