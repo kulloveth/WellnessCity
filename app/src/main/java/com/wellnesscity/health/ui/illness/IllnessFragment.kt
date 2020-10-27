@@ -5,11 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import com.wellnesscity.health.data.model.Status
 import com.wellnesscity.health.databinding.FragmentIllnessBinding
+import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 
+@AndroidEntryPoint
 class IllnessFragment : Fragment() {
     private var binding: FragmentIllnessBinding? = null
+    private val viewmodel: IllnessViewModel by viewModels()
+    private val adapter = IllnessAdapter()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,5 +35,26 @@ class IllnessFragment : Fragment() {
     override fun onPause() {
         binding?.listLl?.shimmerFl?.stopShimmerAnimation()
         super.onPause()
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        showData()
+    }
+    fun showData() {
+        viewmodel.fetchIllnessData().observe(requireActivity(), Observer {
+            when (it.status) {
+                Status.SUCCESS -> {
+                    binding?.listLl?.shimmerFl?.stopShimmerAnimation()
+                    binding?.listLl?.rv?.adapter = adapter
+                    adapter.submitList(it.data)
+                    Timber.d("${it.data}")
+                    binding?.listLl?.shimmerFl?.visibility = View.GONE
+                    binding?.listLl?.rv?.visibility = View.VISIBLE
+                }
+
+            }
+
+        })
     }
 }

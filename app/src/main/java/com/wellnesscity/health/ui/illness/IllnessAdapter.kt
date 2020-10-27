@@ -7,18 +7,19 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.api.load
 import com.wellnesscity.health.data.model.ConditionsWithSymptom
+import com.wellnesscity.health.databinding.ItemLayoutBinding
 import com.wellnesscity.health.databinding.ShimmerLayoutBinding
 
 class IllnessAdapter : ListAdapter<ConditionsWithSymptom, IllnessAdapter.IllnessViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IllnessViewHolder {
-        return IllnessViewHolder(ShimmerLayoutBinding.inflate(LayoutInflater.from(parent.context),parent,false))
+        return IllnessViewHolder(ItemLayoutBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
 
     override fun onBindViewHolder(holder: IllnessViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
-    inner class IllnessViewHolder(private val binding: ShimmerLayoutBinding) :
+    inner class IllnessViewHolder(private val binding: ItemLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(conditions: ConditionsWithSymptom) {
             binding.descTv.text = conditions.desc

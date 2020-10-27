@@ -6,12 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.navigation.findNavController
 import com.google.firebase.firestore.FirebaseFirestore
 import com.wellnesscity.health.R
 import com.wellnesscity.health.data.FirebaseServices
 import com.wellnesscity.health.databinding.FragmentWelcomeBinding
+import com.wellnesscity.health.ui.illness.IllnessViewModel
 import com.wellnesscity.health.util.tint
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 import javax.inject.Inject
 
 
@@ -19,6 +24,7 @@ import javax.inject.Inject
 class WelcomeFragment : Fragment() {
     private var binding: FragmentWelcomeBinding? = null
     @Inject  lateinit var db:FirebaseFirestore
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,6 +38,10 @@ class WelcomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val fs= FirebaseServices(db, requireActivity())
+        binding?.illnessTv?.setOnClickListener {
+            requireView().findNavController().navigate(WelcomeFragmentDirections.actionWelcomeFragmentToIllnessFragment())
+        }
+
         changeDrawableCOlor()
         //binding?.topBarTv?.text?.toString()?.subSequence(14,41).toString()
         //binding?.barIv?.load("https://firebasestorage.googleapis.com/v0/b/wellnesscity-efcc6.appspot.com/o/illness%2Farthritis.jpg?alt=media&token=e5499ddf-fcda-44ad-9315-c383ee33e0f4")
