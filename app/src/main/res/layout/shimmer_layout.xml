@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <ImageView
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/image"
+        android:layout_width="200dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="200dp"/>
+
+    <TextView
+        android:id="@+id/titleTv"
+        app:layout_constraintStart_toEndOf="@id/image"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Title"
+        android:textSize="@dimen/title_text_size"
+        android:fontFamily="@font/montserrat"
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/descTv"
+        app:layout_constraintTop_toBottomOf="@id/titleTv"
+        tools:text="Title descripion detail"
+        app:layout_constraintStart_toEndOf="@id/image"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="@dimen/title_text_size"
+        android:fontFamily="@font/montserrat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

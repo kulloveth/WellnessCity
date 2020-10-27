@@ -64,6 +64,9 @@ dependencies {
     //datastore
     implementation "androidx.datastore:datastore-preferences:1.0.0-alpha02"
 
+    //shimmer
+    implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
+
     //viewpager2
     implementation "androidx.viewpager2:viewpager2:1.0.0"
     //indicator
