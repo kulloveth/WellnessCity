@@ -16,7 +16,7 @@ class HealthTipsViewModel @ViewModelInject constructor(private val firebaseServi
         firebaseServices.fetchData().addOnCompleteListener {
             if (it.isSuccessful) {
                 it.result?.let { result ->
-                    val i = result.documents[2]?.toObject(HealthObject::class.java)
+                    val i = result.documents[1]?.toObject(HealthObject::class.java)
                     i?.let {
                     _healthLiveData.postValue(Resource.success(it.list))
                         Timber.d("${i.list}")
