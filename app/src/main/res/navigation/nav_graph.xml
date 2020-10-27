@@ -37,5 +37,24 @@
         android:id="@+id/welcomeFragment"
         android:name="com.wellnesscity.health.ui.welcome.WelcomeFragment"
         android:label="fragment_welcome"
-        tools:layout="@layout/fragment_welcome" />
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_illnessFragment"
+            app:destination="@id/illnessFragment"
+            app:popUpTo="@id/welcomeFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_healthTipsFragment"
+            app:destination="@id/healthTipsFragment"
+            app:popUpTo="@id/welcomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/illnessFragment"
+        android:name="com.wellnesscity.health.ui.illness.IllnessFragment"
+        android:label="fragment_illness"
+        tools:layout="@layout/fragment_illness" />
+    <fragment
+        android:id="@+id/healthTipsFragment"
+        android:name="com.wellnesscity.health.ui.healthtips.HealthTipsFragment"
+        android:label="fragment_health_tips"
+        tools:layout="@layout/fragment_health_tips" />
 </navigation>

@@ -2,6 +2,7 @@ package com.wellnesscity.health.util
 
 import android.content.Context
 import com.google.gson.Gson
+import com.wellnesscity.health.data.model.HealthObject
 import com.wellnesscity.health.data.model.HealthTipX
 import com.wellnesscity.health.data.model.IllnessObject
 import org.json.JSONObject
@@ -17,7 +18,7 @@ object JsonUtils {
        return illnessObject
     }
 
-    fun readHealthJsonFile(context: Context):List<HealthTipX> {
+    fun readHealthJsonFile(context: Context):HealthObject {
         val jsonString =
             context.assets.open("health_tips.json").bufferedReader().use { it.readText() }
         val jsonObject = JSONObject(jsonString)
@@ -34,6 +35,6 @@ object JsonUtils {
 
         }
         Timber.d("$healthList")
-        return healthList
+        return HealthObject(healthList)
     }
 }
