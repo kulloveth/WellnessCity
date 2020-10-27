@@ -1,3 +1,3 @@
 package com.wellnesscity.health.data.model
 
-data class HealthObject (val list:List<HealthTipX>)
+data class HealthObject (val list:List<HealthTipX> = listOf())

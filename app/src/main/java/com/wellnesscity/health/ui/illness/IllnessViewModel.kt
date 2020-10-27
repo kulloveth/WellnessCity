@@ -15,7 +15,7 @@ class IllnessViewModel @ViewModelInject constructor(private val firebaseServices
     private val _illnessLiveData = MutableLiveData<Resource<List<ConditionsWithSymptom>>>()
 
     fun fetchIllnessData():LiveData<Resource<List<ConditionsWithSymptom>>>{
-        firebaseServices.fetchIllnessData().addOnCompleteListener {
+        firebaseServices.fetchData().addOnCompleteListener {
             if (it.isSuccessful) {
                 it.result?.let { result ->
                     val i = result.documents[1]?.toObject(IllnessObject::class.java)

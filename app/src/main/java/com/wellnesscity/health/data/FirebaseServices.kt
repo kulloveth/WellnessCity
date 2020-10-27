@@ -32,9 +32,7 @@ class FirebaseServices @Inject constructor(
 
     fun insertHealthData() {
         val conditions = JsonUtils.readHealthJsonFile(context)
-        val condition = hashMapOf<String, List<HealthTipX>>()
-        condition["health-tips"] = conditions
-        firestore.collection("wellness").document().set(condition).addOnCompleteListener {
+        firestore.collection("wellness").document("health-tips").set(conditions).addOnCompleteListener {
             if (it.isSuccessful) {
                 Timber.d("completed $conditions")
             } else {
@@ -45,5 +43,6 @@ class FirebaseServices @Inject constructor(
     }
 
 
-    fun fetchIllnessData() = firestore.collection("wellness").get()
+    fun fetchData() = firestore.collection("wellness").get()
+
 }
