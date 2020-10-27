@@ -19,5 +19,13 @@ class HealthTipsFragment : Fragment() {
         binding = FragmentHealthTipsBinding.inflate(layoutInflater)
         return binding?.root
     }
+    override fun onResume() {
+        super.onResume()
+        binding?.listLl?.shimmerFl?.startShimmerAnimation()
+    }
 
+    override fun onPause() {
+        binding?.listLl?.shimmerFl?.stopShimmerAnimation()
+        super.onPause()
+    }
 }
