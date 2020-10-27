@@ -6,6 +6,10 @@ A GADS Community Project to help user stay healthy, get Health and Diet tips/adv
           
    ![Slide](https://github.com/kulloveth/WellnessCity/blob/master/app/screenshots/Wcity.gif)
   </td>
+   <td>
+
+     ![Slide](https://github.com/kulloveth/WellnessCity/blob/master/app/screenshots/welcome.png)
+    </td>
   </tr>
   </table>
 # Contributing to WellnessCity
