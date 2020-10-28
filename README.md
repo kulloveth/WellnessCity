@@ -1,36 +1,41 @@
 # WellnessCity
 A GADS Community Project to help user stay healthy, get Health and Diet tips/advice and Covid 19 Regular Reminder to stay safe
 <table>
-    <tr>
-      <td>
-          
+  <tr>
+    <td>
+        
    ![Slide](https://github.com/kulloveth/WellnessCity/blob/master/app/screenshots/Wcity.gif)
-  </td>
+    </td>
+        
    <td>
-
+    
    ![Slide](https://github.com/kulloveth/WellnessCity/blob/master/app/screenshots/welcome.png)
     </td>
-
+    
    <td>
-
+    
    ![Slide](https://github.com/kulloveth/WellnessCity/blob/master/app/screenshots/illness.png)
-      </td>
-  </tr>
-     <tr>
-        <td>
-
-     ![Slide](https://github.com/kulloveth/WellnessCity/blob/master/app/screenshots/diets.gif)
     </td>
-     <td>
-
+     
+ </tr>
+ 
+   <tr>
+   <td>
+       
+   ![Slide](https://github.com/kulloveth/WellnessCity/blob/master/app/screenshots/diets.png)
+    </td>
+    
+   <td>
+    
    ![Slide](https://github.com/kulloveth/WellnessCity/blob/master/app/screenshots/options.png)
-      </td>
+    </td>
 
-  <td>
-
+<td>
+    
   ![Slide](https://github.com/kulloveth/WellnessCity/blob/master/app/screenshots/health_tips.png)
-     </td>
-    </tr>
+</td>
+
+   </tr>
   </table>
 
 # Contributing to WellnessCity
