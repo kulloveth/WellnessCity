@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="Diets"
+        android:icon="@drawable/ic_baseline_fastfood_24"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/vegan"
+                android:title="Vegan" />
+            <item
+                android:id="@+id/vegy"
+                android:title="Vegetarian" />
+            <item
+                android:id="@+id/gf"
+                android:title="Gluton Free" />
+            <item
+                android:id="@+id/ketogen"
+                android:title="Ketogenic" />
+            <item
+                android:id="@+id/lactovegy"
+                android:title="Lacto-Vegetarian" />
+            <item
+                android:id="@+id/ovovegy"
+                android:title="Ovo-Vegetarian" />
+            <item
+                android:id="@+id/pesce"
+                android:title="Pescetarian" />
+            <item
+                android:id="@+id/palio"
+                android:title="Paleo" />
+            <item
+                android:id="@+id/primal"
+                android:title="Primal" />
+            <item
+                android:id="@+id/whole"
+                android:title="Whole 30" />
+        </menu>
+    </item>
+</menu>

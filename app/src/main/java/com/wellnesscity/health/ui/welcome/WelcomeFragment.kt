@@ -23,8 +23,6 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class WelcomeFragment : Fragment() {
     private var binding: FragmentWelcomeBinding? = null
-    @Inject  lateinit var db:FirebaseFirestore
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,8 +35,6 @@ class WelcomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val fs= FirebaseServices(db, requireActivity())
-        //fs.insertHealthData()
         binding?.illnessTv?.setOnClickListener {
             requireView().findNavController().navigate(WelcomeFragmentDirections.actionWelcomeFragmentToIllnessFragment())
         }
