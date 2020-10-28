@@ -27,6 +27,7 @@ class DietFragment : Fragment() {
     private val viewModel: DietViewModel by viewModels()
     private var binding: FragmentDietBinding? = null
     private val adapter = DietAdapter()
+    private var diet = ""
 
     @Inject
     lateinit var prefs: DataStore<Preferences>
@@ -51,13 +52,13 @@ class DietFragment : Fragment() {
     }
 
     fun showData() {
-        var diet = ""
-        lifecycleScope.launch {
-            prefs.data.collectLatest {
-                 diet = it[preferencesKey<String>("diet")]?:"vegetarian"
-            }
-        }
         viewModel.fetchRecipeData(diet).observe(requireActivity(), Observer {
+            lifecycleScope.launch {
+                prefs.data.collectLatest {
+                    diet = it[preferencesKey<String>("diet")]?:"vegetarian"
+                }
+            }
+            binding?.toolBar?.title = "Diets For $diet"
             when (it.status) {
                 Status.SUCCESS -> {
                     binding?.shimmerFl?.stopShimmerAnimation()
