@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.diet.DietFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:title="Diets"
+            app:titleTextColor="@android:color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/sv"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:queryHint="Search Conditions"
+        android:layout_marginStart="@dimen/half_standard_padding"
+        android:layout_marginEnd="@dimen/half_standard_padding"
+        android:background="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/appBar"
+        app:searchIcon="@drawable/ic_baseline_search_24" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/half_standard_padding"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sv"
+        tools:visibility="visible" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerFl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/standard_padding"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/appBar"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/diet_shimmer_layout" />
+
+            <include layout="@layout/diet_shimmer_layout" />
+
+            <include layout="@layout/diet_shimmer_layout" />
+
+            <include layout="@layout/diet_shimmer_layout" />
+
+            <include layout="@layout/diet_shimmer_layout" />
+
+            <include layout="@layout/diet_shimmer_layout" />
+
+            <include layout="@layout/diet_shimmer_layout" />
+
+            <include layout="@layout/diet_shimmer_layout" />
+
+            <include layout="@layout/diet_shimmer_layout" />
+
+            <include layout="@layout/diet_shimmer_layout" />
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -45,6 +45,10 @@ class WelcomeFragment : Fragment() {
         binding?.healthTv?.setOnClickListener {
             requireView().findNavController().navigate(WelcomeFragmentDirections.actionWelcomeFragmentToHealthTipsFragment())
         }
+
+        binding?.dietTv?.setOnClickListener {
+            requireView().findNavController().navigate(WelcomeFragmentDirections.actionWelcomeFragmentToDietFragment())
+        }
         changeDrawableCOlor()
     }
 

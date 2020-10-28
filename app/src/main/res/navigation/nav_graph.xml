@@ -46,6 +46,10 @@
             android:id="@+id/action_welcomeFragment_to_healthTipsFragment"
             app:destination="@id/healthTipsFragment"
             app:popUpTo="@id/welcomeFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_dietFragment"
+            app:destination="@id/dietFragment"
+            app:popUpTo="@id/welcomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/illnessFragment"
@@ -57,4 +61,9 @@
         android:name="com.wellnesscity.health.ui.healthtips.HealthTipsFragment"
         android:label="fragment_health_tips"
         tools:layout="@layout/fragment_health_tips" />
+    <fragment
+        android:id="@+id/dietFragment"
+        android:name="com.wellnesscity.health.ui.diet.DietFragment"
+        android:label="fragment_diet"
+        tools:layout="@layout/fragment_diet" />
 </navigation>
