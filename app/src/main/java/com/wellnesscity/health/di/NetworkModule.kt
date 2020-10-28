@@ -2,6 +2,7 @@ package com.wellnesscity.health.di
 
 import com.wellnesscity.health.data.api.ApiService
 import com.wellnesscity.health.util.Constants
+import com.wellnesscity.health.util.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,6 +17,9 @@ import javax.inject.Singleton
 @InstallIn(ApplicationComponent::class)
 @Module
 object NetworkModule {
+
+    @Provides
+    fun providesBaseUrl() = BASE_URL
 
     @Provides
     @Singleton
@@ -39,7 +43,7 @@ object NetworkModule {
     @Provides
     @Singleton
     fun providesRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
-            .baseUrl(Constants.BASE_URL)
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()
