@@ -8,6 +8,7 @@ import androidx.annotation.ColorRes
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
+import com.google.android.material.snackbar.Snackbar
 import com.wellnesscity.health.R
 
 
@@ -19,4 +20,8 @@ fun View.setMenuBackgroundColor(context: Context, @ColorInt color: Int){
 
 fun Drawable.tint(context: Context, @ColorRes color: Int) {
     DrawableCompat.setTint(this, ContextCompat.getColor(context, color))
+}
+
+fun View.snackMessage(message: String){
+    Snackbar.make(this,message,Snackbar.LENGTH_LONG).show()
 }

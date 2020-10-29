@@ -1,12 +1,15 @@
 package com.wellnesscity.health.di
 
+import android.content.Context
 import com.wellnesscity.health.data.api.ApiService
 import com.wellnesscity.health.util.Constants
 import com.wellnesscity.health.util.Constants.BASE_URL
+import com.wellnesscity.health.util.NetworkControler
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
+import dagger.hilt.android.qualifiers.ApplicationContext
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -51,5 +54,10 @@ object NetworkModule {
     @Provides
     @Singleton
     fun providesApiService(retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)
+
+    @Provides
+    fun provideNetworkService(@ApplicationContext context: Context):NetworkControler{
+        return NetworkControler(context)
+    }
 
 }

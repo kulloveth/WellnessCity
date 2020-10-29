@@ -59,20 +59,44 @@
         android:id="@+id/illnessFragment"
         android:name="com.wellnesscity.health.ui.illness.IllnessFragment"
         android:label="fragment_illness"
-        tools:layout="@layout/fragment_illness" />
+        tools:layout="@layout/fragment_illness" >
+        <action
+            android:id="@+id/action_illnessFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment"
+            app:popUpTo="@id/welcomeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/healthTipsFragment"
         android:name="com.wellnesscity.health.ui.healthtips.HealthTipsFragment"
         android:label="fragment_health_tips"
-        tools:layout="@layout/fragment_health_tips" />
+        tools:layout="@layout/fragment_health_tips" >
+        <action
+            android:id="@+id/action_healthTipsFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment"
+            app:popUpTo="@id/welcomeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/dietFragment"
         android:name="com.wellnesscity.health.ui.diet.DietFragment"
         android:label="fragment_diet"
-        tools:layout="@layout/fragment_diet" />
+        tools:layout="@layout/fragment_diet" >
+        <action
+            android:id="@+id/action_dietFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment"
+            app:popUpTo="@id/welcomeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
     <dialog
         android:id="@+id/covidFragment"
         android:name="com.wellnesscity.health.ui.CovidFragment"
         android:label="fragment_covid"
-        tools:layout="@layout/fragment_covid" />
+        tools:layout="@layout/fragment_covid" >
+        <action
+            android:id="@+id/action_covidFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment"
+            app:popUpTo="@id/welcomeFragment"
+            app:popUpToInclusive="true" />
+    </dialog>
 </navigation>

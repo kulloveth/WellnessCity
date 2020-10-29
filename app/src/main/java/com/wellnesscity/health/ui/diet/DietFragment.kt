@@ -11,10 +11,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.wellnesscity.health.R
 import com.wellnesscity.health.data.model.Status
 import com.wellnesscity.health.databinding.FragmentDietBinding
+import com.wellnesscity.health.util.snackMessage
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
@@ -48,6 +50,9 @@ class DietFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding?.toolBar)
+        binding?.toolBar?.setNavigationOnClickListener {
+            requireView().findNavController().navigate(DietFragmentDirections.actionDietFragmentToWelcomeFragment())
+        }
         showData()
     }
 
@@ -70,6 +75,16 @@ class DietFragment : Fragment() {
                     binding?.shimmerFl?.visibility = View.GONE
                     binding?.rv?.visibility = View.VISIBLE
                     Timber.d("${it.data?.results?.size}")
+                }
+                Status.ERROR ->{
+                    it.message?.let {
+                        requireView().snackMessage(it)
+                    }
+                }
+                Status.LOADING ->{
+                    binding?.shimmerFl?.visibility = View.VISIBLE
+                    binding?.shimmerFl?.startShimmerAnimation()
+                    binding?.rv?.visibility = View.GONE
                 }
             }
         })

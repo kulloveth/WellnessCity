@@ -7,8 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.findNavController
 import com.wellnesscity.health.data.model.Status
 import com.wellnesscity.health.databinding.FragmentIllnessBinding
+import com.wellnesscity.health.ui.healthtips.HealthTipsFragmentDirections
+import com.wellnesscity.health.util.snackMessage
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
@@ -39,6 +42,9 @@ class IllnessFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding?.listLl?.toolBar?.setNavigationOnClickListener {
+            requireView().findNavController().navigate(IllnessFragmentDirections.actionIllnessFragmentToWelcomeFragment())
+        }
         showData()
     }
     fun showData() {
@@ -51,6 +57,11 @@ class IllnessFragment : Fragment() {
                     Timber.d("${it.data}")
                     binding?.listLl?.shimmerFl?.visibility = View.GONE
                     binding?.listLl?.rv?.visibility = View.VISIBLE
+                }
+                Status.ERROR ->{
+                    it.message?.let {
+                        requireView().snackMessage(it)
+                    }
                 }
 
             }

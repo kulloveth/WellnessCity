@@ -17,9 +17,10 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolBar"
+            app:navigationIcon="@drawable/ic_arrow_back"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:title="Covid 19 Prevention Tips"
+            app:title="Covid Prevention Tips"
             app:titleTextColor="@android:color/white" />
     </com.google.android.material.appbar.AppBarLayout>
 
