@@ -1,15 +1,17 @@
 package com.wellnesscity.health.ui.healthtips
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import com.wellnesscity.health.R
+import androidx.navigation.findNavController
 import com.wellnesscity.health.data.model.Status
 import com.wellnesscity.health.databinding.FragmentHealthTipsBinding
+import com.wellnesscity.health.ui.welcome.WelcomeFragmentDirections
+import com.wellnesscity.health.util.snackMessage
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
@@ -32,6 +34,9 @@ class HealthTipsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding?.listLl?.toolBar?.title = "Health Tips"
+        binding?.listLl?.toolBar?.setNavigationOnClickListener {
+        requireView().findNavController().navigate(HealthTipsFragmentDirections.actionHealthTipsFragmentToWelcomeFragment())
+        }
         showData()
     }
     override fun onResume() {
@@ -54,8 +59,13 @@ class HealthTipsFragment : Fragment() {
                     binding?.listLl?.shimmerFl?.visibility = View.GONE
                     binding?.listLl?.rv?.visibility = View.VISIBLE
                 }
-
-            }
+                Status.ERROR ->{
+                    it.message?.let {
+                        requireView().snackMessage(it)
+                    }
+                } }
         })
     }
+
+
 }

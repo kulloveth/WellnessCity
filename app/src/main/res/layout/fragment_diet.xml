@@ -17,6 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:title="Diets for"
+            app:navigationIcon="@drawable/ic_arrow_back"
             app:titleTextColor="@android:color/white">
             <TextView
                 tools:text="Recipes"
