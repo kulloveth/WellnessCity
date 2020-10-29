@@ -27,6 +27,7 @@
             android:layout_marginTop="@dimen/standard_padding"
             android:fontFamily="@font/montserrat"
             android:textSize="@dimen/title_text_size"
+            android:textColor="@android:color/black"
             android:layout_marginStart="@dimen/half_standard_padding"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/image"
