@@ -90,6 +90,7 @@ class OnboardingFragment : Fragment() {
             })
     }
 
+    //saves the onboarding to the preference datastore
     suspend fun saveOnboarding() {
         prefs.edit {
             val oneTime = true

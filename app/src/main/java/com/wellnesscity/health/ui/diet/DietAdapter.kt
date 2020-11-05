@@ -9,6 +9,10 @@ import coil.api.load
 import com.wellnesscity.health.data.model.Diet
 import com.wellnesscity.health.databinding.DietItemLayoutBinding
 
+
+/**
+ * Created by Loveth Nwokike on 28/10/2020
+ */
 class DietAdapter : ListAdapter<Diet, DietAdapter.DietViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DietViewHolder {

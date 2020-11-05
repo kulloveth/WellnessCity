@@ -5,6 +5,7 @@ buildscript {
         hilt_version = "2.28-alpha"
         nav_version = "2.3.1"
         lottieVersion = '3.4.1'
+        lifecycleVersion = '2.2.0'
         retrofit_version = "2.9.0"
     }
     repositories {

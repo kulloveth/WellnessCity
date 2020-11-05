@@ -8,6 +8,8 @@ import com.wellnesscity.health.databinding.SlideItemContainerBinding
 
 class IntroSliderAdapter(private val introSlides: List<IntroSlide>)
     : RecyclerView.Adapter<IntroSliderAdapter.IntroSlideViewHolder>(){
+
+    // to pass onboarding title textview to tthe Onboarding fragment
     var onTextPassed: ((textView:TextView) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IntroSlideViewHolder {

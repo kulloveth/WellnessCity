@@ -13,6 +13,9 @@ import com.wellnesscity.health.util.NetworkControler
 import kotlinx.coroutines.launch
 
 
+/**
+ * Created by Loveth Nwokike on 28/10/2020
+ * */
 class DietViewModel @ViewModelInject constructor(
     apiService: ApiService,
     private val repository: Repository = Repository(apiService),
