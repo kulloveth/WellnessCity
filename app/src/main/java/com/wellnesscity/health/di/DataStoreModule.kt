@@ -11,6 +11,10 @@ import dagger.hilt.android.components.ApplicationComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Singleton
 
+/**
+ * Created by Loveth Nwokike on 25/10/2020
+ */
+
 @Module
 @InstallIn(ApplicationComponent::class)
 class DataStoreModule {

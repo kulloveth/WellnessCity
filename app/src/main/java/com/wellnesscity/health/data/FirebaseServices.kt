@@ -10,6 +10,9 @@ import com.wellnesscity.health.util.JsonUtils
 import timber.log.Timber
 import javax.inject.Inject
 
+/**
+ * Created by Loveth Nwokike on 25/10/2020
+ * */
 class FirebaseServices @Inject constructor(
     private val firestore: FirebaseFirestore,
     private val context: Context

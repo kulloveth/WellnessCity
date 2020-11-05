@@ -15,7 +15,9 @@ import com.wellnesscity.health.util.snackMessage
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
-
+/**
+ * Created by Loveth Nwokike on 25/10/2020
+ */
 @AndroidEntryPoint
 class IllnessFragment : Fragment() {
     private var binding: FragmentIllnessBinding? = null

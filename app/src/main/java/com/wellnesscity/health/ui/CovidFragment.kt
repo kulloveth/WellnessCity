@@ -19,6 +19,9 @@ import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 import java.util.*
 
+/**
+ * Created by Loveth Nwokike on 25/10/2020
+ */
 @AndroidEntryPoint
 class CovidFragment : DialogFragment() {
 private var binding:FragmentCovidBinding? = null

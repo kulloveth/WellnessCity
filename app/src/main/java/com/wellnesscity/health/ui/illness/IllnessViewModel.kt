@@ -11,6 +11,9 @@ import com.wellnesscity.health.data.model.Resource
 import com.wellnesscity.health.util.NetworkControler
 import timber.log.Timber
 
+/**
+ * Created by Loveth Nwokike on 25/10/2020
+ */
 class IllnessViewModel @ViewModelInject constructor(private val firebaseServices: FirebaseServices,private val networkControler: NetworkControler) :ViewModel(){
 
     private val _illnessLiveData = MutableLiveData<Resource<List<ConditionsWithSymptom>>>()

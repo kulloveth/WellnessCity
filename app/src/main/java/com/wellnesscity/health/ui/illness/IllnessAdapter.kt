@@ -10,6 +10,9 @@ import com.wellnesscity.health.data.model.ConditionsWithSymptom
 import com.wellnesscity.health.databinding.ItemLayoutBinding
 import com.wellnesscity.health.databinding.ShimmerLayoutBinding
 
+/**
+ * Created by Loveth Nwokike on 25/10/2020
+ */
 class IllnessAdapter : ListAdapter<ConditionsWithSymptom, IllnessAdapter.IllnessViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IllnessViewHolder {

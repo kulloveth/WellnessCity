@@ -24,6 +24,9 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
 
+/**
+ * Created by Loveth Nwokike on 28/10/2020
+ * */
 @AndroidEntryPoint
 class DietFragment : Fragment() {
     private val viewModel: DietViewModel by viewModels()
