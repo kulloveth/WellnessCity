@@ -18,7 +18,7 @@ class DataStoreModule {
     @Singleton
     fun provideOnBoardPreference(@ApplicationContext context: Context): DataStore<Preferences>{
        return context.createDataStore(
-            name = "onboard"
+            name = "com.wellnesscity.health.di"
         )
     }
 }

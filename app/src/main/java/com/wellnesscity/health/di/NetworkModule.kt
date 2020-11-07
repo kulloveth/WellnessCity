@@ -1,8 +1,6 @@
 package com.wellnesscity.health.di
 
 import android.content.Context
-import com.wellnesscity.health.data.api.ApiService
-import com.wellnesscity.health.util.Constants
 import com.wellnesscity.health.util.Constants.BASE_URL
 import com.wellnesscity.health.util.NetworkControler
 import dagger.Module
@@ -50,10 +48,6 @@ object NetworkModule {
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()
-
-    @Provides
-    @Singleton
-    fun providesApiService(retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)
 
     @Provides
     fun provideNetworkService(@ApplicationContext context: Context):NetworkControler{
