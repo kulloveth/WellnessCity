@@ -5,26 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
-import androidx.datastore.DataStore
-import androidx.datastore.preferences.Preferences
-import androidx.datastore.preferences.edit
-import androidx.datastore.preferences.preferencesKey
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
+import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.wellnesscity.health.R
 import com.wellnesscity.health.databinding.FragmentOnboardingBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 
 @AndroidEntryPoint
 class OnboardingFragment : Fragment() {
     private var binding: FragmentOnboardingBinding? = null
-    @Inject
-    lateinit var prefs: DataStore<Preferences>
+    private val viewModel:OnboardingViewModel by viewModels()
 
     private val introSliderAdapter = IntroSliderAdapter(
         listOf(
@@ -72,9 +65,7 @@ class OnboardingFragment : Fragment() {
                         binding?.buttonNext?.animation = animation
                         binding?.buttonNext?.text = "Finish"
                         binding?.buttonNext?.setOnClickListener {
-                            lifecycleScope.launch {
-                                saveOnboarding()
-                            }
+                                viewModel.saveOnboarding(true)
                             requireView().findNavController()
                                 .navigate(OnboardingFragmentDirections.actionOnboardingFragmentToWelcomeFragment())
                         }
@@ -90,12 +81,6 @@ class OnboardingFragment : Fragment() {
             })
     }
 
-    //saves the onboarding to the preference datastore
-    suspend fun saveOnboarding() {
-        prefs.edit {
-            val oneTime = true
-            it[preferencesKey<Boolean>("onBoard")] = oneTime
-        }
-    }
+
 
 }

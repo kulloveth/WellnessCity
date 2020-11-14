@@ -30,7 +30,7 @@
         <action
             android:id="@+id/action_onboardingFragment_to_welcomeFragment"
             app:destination="@id/welcomeFragment"
-            app:popUpTo="@id/splashFragment"
+            app:popUpTo="@id/onboardingFragment"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment

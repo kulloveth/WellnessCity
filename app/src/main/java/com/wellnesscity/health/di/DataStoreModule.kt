@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.datastore.DataStore
 import androidx.datastore.preferences.Preferences
 import androidx.datastore.preferences.createDataStore
+import com.wellnesscity.health.data.DataStorePreference
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,7 +23,12 @@ class DataStoreModule {
     @Singleton
     fun provideOnBoardPreference(@ApplicationContext context: Context): DataStore<Preferences>{
        return context.createDataStore(
-            name = "onboard"
+            name = "com.wellnesscity.health"
         )
+    }
+
+    @Provides
+    fun provideDatastorePreference(preference:DataStore<Preferences>):DataStorePreference{
+        return DataStorePreference(preference)
     }
 }

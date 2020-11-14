@@ -63,4 +63,5 @@ fun changeDrawableCOlor(){
     ResourcesCompat.getDrawable(resources,R.drawable.menu_bg,resources.newTheme())?.tint(requireContext(),R.color.menuFour)
     binding?.covidTv?.setBackgroundDrawable(resources.getDrawable(R.drawable.menu_bg))
 }
+
 }
