@@ -6,35 +6,31 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
-import androidx.datastore.DataStore
-import androidx.datastore.preferences.Preferences
-import androidx.datastore.preferences.preferencesKey
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import com.wellnesscity.health.databinding.FragmentSplashBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class SplashFragment : Fragment() {
     private var binding: FragmentSplashBinding? = null
-    @Inject lateinit var prefs:DataStore<Preferences>
     private val handler = Handler()
+    private val viewModel: OnboardingViewModel by viewModels()
     private val runnable = Runnable {
 
-        lifecycleScope.launch {
-        prefs.data.collectLatest {
-            if (it[preferencesKey<Boolean>("onBoard")] == true)
-                requireView().findNavController()
-                    .navigate(SplashFragmentDirections.actionSplashFragmentToWelcomeFragment())
-            else
+        viewModel.fetchOnboarding().observe(requireActivity(), Observer {
+            if (it == true) {
+                view?.findNavController()
+                   ?.navigate(SplashFragmentDirections.actionSplashFragmentToWelcomeFragment())
+            } else {
                 requireView().findNavController()
                     .navigate(SplashFragmentDirections.actionSplashFragmentToOnboardingFragment())
-        }
-    }}
+            }
+        })
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,12 +43,15 @@ class SplashFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        requireActivity().window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        requireActivity().window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
     }
 
     override fun onResume() {
         super.onResume()
-        handler.postDelayed(runnable,3000)
+        handler.postDelayed(runnable, 3000)
     }
 
     override fun onPause() {
