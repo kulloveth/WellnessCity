@@ -7,6 +7,9 @@ import androidx.lifecycle.viewModelScope
 import com.wellnesscity.health.data.DataStorePreference
 import kotlinx.coroutines.launch
 
+/**
+ * Created by Loveth Nwokike on 14/11/2020
+ * */
 class OnboardingViewModel @ViewModelInject constructor(private val preference: DataStorePreference):ViewModel() {
 
 

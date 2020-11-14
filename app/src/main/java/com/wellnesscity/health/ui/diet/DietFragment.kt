@@ -3,10 +3,6 @@ package com.wellnesscity.health.ui.diet
 import android.os.Bundle
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.datastore.DataStore
-import androidx.datastore.preferences.Preferences
-import androidx.datastore.preferences.edit
-import androidx.datastore.preferences.preferencesKey
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -19,10 +15,8 @@ import com.wellnesscity.health.databinding.FragmentDietBinding
 import com.wellnesscity.health.util.snackMessage
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import timber.log.Timber
-import javax.inject.Inject
 
 /**
  * Created by Loveth Nwokike on 28/10/2020
@@ -34,8 +28,6 @@ class DietFragment : Fragment() {
     private val adapter = DietAdapter()
     private var diet = ""
 
-    @Inject
-    lateinit var prefs: DataStore<Preferences>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
@@ -54,18 +46,17 @@ class DietFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding?.toolBar)
         binding?.toolBar?.setNavigationOnClickListener {
-            requireView().findNavController().navigate(DietFragmentDirections.actionDietFragmentToWelcomeFragment())
+            requireView().findNavController()
+                .navigate(DietFragmentDirections.actionDietFragmentToWelcomeFragment())
         }
         showData()
     }
 
     fun showData() {
         viewModel.fetchRecipeData(diet).observe(requireActivity(), Observer {
-            lifecycleScope.launch {
-                prefs.data.collectLatest {
-                    diet = it[preferencesKey<String>("diet")]?:"vegetarian"
-                }
-            }
+            viewModel.getDiet().observe(requireActivity(), Observer {
+                diet = it
+            })
             binding?.toolBar?.title = "Diets For $diet"
             when (it.status) {
                 Status.SUCCESS -> {
@@ -79,12 +70,12 @@ class DietFragment : Fragment() {
                     binding?.rv?.visibility = View.VISIBLE
                     Timber.d("${it.data?.results?.size}")
                 }
-                Status.ERROR ->{
+                Status.ERROR -> {
                     it.message?.let {
                         requireView().snackMessage(it)
                     }
                 }
-                Status.LOADING ->{
+                Status.LOADING -> {
                     binding?.shimmerFl?.visibility = View.VISIBLE
                     binding?.shimmerFl?.startShimmerAnimation()
                     binding?.rv?.visibility = View.GONE
@@ -99,11 +90,8 @@ class DietFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        lifecycleScope.launch(Dispatchers.Main) {
             setupDiet(item.itemId)
             showData()
-        }
-
         return super.onOptionsItemSelected(item)
     }
 
@@ -117,57 +105,37 @@ class DietFragment : Fragment() {
         super.onPause()
     }
 
-    suspend fun setupDiet(id: Int) {
+     fun setupDiet(id: Int) {
         when (id) {
             R.id.vegan -> {
-                prefs.edit {
-                    it[preferencesKey<String>("diet")] = "vegan"
-                }
+                viewModel.saveDiet("vegan")
             }
             R.id.whole -> {
-                prefs.edit {
-                    it[preferencesKey<String>("diet")] = "Whole30"
-                }
+                viewModel.saveDiet("Whole30")
             }
             R.id.gf -> {
-                prefs.edit {
-                    it[preferencesKey<String>("diet")] = "Gluton Free"
-                }
+                viewModel.saveDiet("Gluton Free")
             }
             R.id.vegy -> {
-                prefs.edit {
-                    it[preferencesKey<String>("diet")] = "Vegetarian"
-                }
+                viewModel.saveDiet("Vegetarian")
             }
             R.id.ketogen -> {
-                prefs.edit {
-                    it[preferencesKey<String>("diet")] = "Ketogenic"
-                }
+                viewModel.saveDiet("Ketogenic")
             }
             R.id.lactovegy -> {
-                prefs.edit {
-                    it[preferencesKey<String>("diet")] = "Lacto-vegetarian"
-                }
+                viewModel.saveDiet("Lacto-vegetarian")
             }
             R.id.ovovegy -> {
-                prefs.edit {
-                    it[preferencesKey<String>("diet")] = "Ovo-vegetarian"
-                }
+                viewModel.saveDiet("Ovo-vegetarian")
             }
             R.id.pesce -> {
-                prefs.edit {
-                    it[preferencesKey<String>("diet")] = "Pescetarian"
-                }
+                viewModel.saveDiet("Pescetarian")
             }
             R.id.palio -> {
-                prefs.edit {
-                    it[preferencesKey<String>("diet")] = "Paleo"
-                }
+                viewModel.saveDiet("Paleo")
             }
             R.id.primal -> {
-                prefs.edit {
-                    it[preferencesKey<String>("diet")] = "Primal"
-                }
+                viewModel.saveDiet("Primal")
             }
         }
     }
