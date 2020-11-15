@@ -7,6 +7,7 @@ import com.wellnesscity.health.data.model.HealthTipX
 import com.wellnesscity.health.data.model.IllnessObject
 import com.wellnesscity.health.data.model.Resource
 import com.wellnesscity.health.util.JsonUtils
+import dagger.hilt.android.qualifiers.ApplicationContext
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -15,7 +16,7 @@ import javax.inject.Inject
  * */
 class FirebaseServices @Inject constructor(
     private val firestore: FirebaseFirestore,
-    private val context: Context
+    @ApplicationContext  private val context: Context
 ) {
     val illnessList = mutableListOf<ConditionsWithSymptom>()
     init {

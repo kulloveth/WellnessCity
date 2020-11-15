@@ -10,10 +10,11 @@ import kotlinx.coroutines.launch
 /**
  * Created by Loveth Nwokike on 14/11/2020
  * */
-class OnboardingViewModel @ViewModelInject constructor(private val preference: DataStorePreference):ViewModel() {
+class OnboardingViewModel @ViewModelInject constructor(private val preference: DataStorePreference) :
+    ViewModel() {
 
 
-    fun saveOnboarding(save:Boolean){
+    fun saveOnboarding(save: Boolean) {
         viewModelScope.launch {
             preference.saveOnboarding(save)
         }

@@ -26,9 +26,4 @@ class DataStoreModule {
             name = "com.wellnesscity.health"
         )
     }
-
-    @Provides
-    fun provideDatastorePreference(preference:DataStore<Preferences>):DataStorePreference{
-        return DataStorePreference(preference)
-    }
 }

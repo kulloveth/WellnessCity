@@ -21,9 +21,4 @@ class FirebaseModule {
     @Singleton
     fun provideCloudFirestore() = FirebaseFirestore.getInstance()
 
-    @Provides
-    @Singleton
-    fun provideFireBaseServices(firestore: FirebaseFirestore, @ApplicationContext context: Context): FirebaseServices {
-        return FirebaseServices(firestore,context)
-    }
 }

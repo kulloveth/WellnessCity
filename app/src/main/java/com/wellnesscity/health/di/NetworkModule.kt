@@ -55,9 +55,4 @@ object NetworkModule {
     @Singleton
     fun providesApiService(retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)
 
-    @Provides
-    fun provideNetworkService(@ApplicationContext context: Context):NetworkControler{
-        return NetworkControler(context)
-    }
-
 }

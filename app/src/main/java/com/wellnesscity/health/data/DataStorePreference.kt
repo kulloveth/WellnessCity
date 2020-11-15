@@ -5,11 +5,12 @@ import androidx.datastore.preferences.Preferences
 import androidx.datastore.preferences.edit
 import androidx.datastore.preferences.preferencesKey
 import kotlinx.coroutines.flow.map
+import javax.inject.Inject
 
 /**
  * Created by Loveth Nwokike on 14/11/2020
  * */
-class DataStorePreference(private val preferences:DataStore<Preferences>) {
+class DataStorePreference @Inject constructor(private val preferences:DataStore<Preferences>) {
 
     suspend fun saveOnboarding(save:Boolean) {
         preferences.edit {
