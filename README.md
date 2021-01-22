@@ -1,4 +1,8 @@
 # WellnessCity
+  
+   ![Bower](https://img.shields.io/bower/l/html?style=for-the-badge) ![Bower](https://img.shields.io/badge/-Kotlin-7f7.svg?style=for-the-badge) 
+   ![Bower](https://img.shields.io/badge/-Android-7f7.svg?style=for-the-badge)
+
 A GADS Community Project to help user stay healthy, get Health and Diet tips/advice and Covid 19 Regular Reminder to stay safe
 <table>
   <tr>
