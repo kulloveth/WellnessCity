@@ -37,7 +37,7 @@ jobs:
         run: echo API_KEY=\"$API_KEY\" > ./gradle.properties
         
       - name: Access androidx
-        run: echo android.useAndroidX=\"true\" > ./gradle.properties
+        run: echo android.useAndroidX=\true\ > ./gradle.properties
       
       
 
