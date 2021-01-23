@@ -31,6 +31,10 @@ jobs:
 #         env:
 #           FIREBASE_SECRET: ${{ secrets.FIREBASE_SECRET }}
 #         run: echo $FIREBASE_SECRET > app/google-services.json
+      - name: Access API_KEY
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+        run: echo API_KEY=\"$API_KEY\" > ./gradle.properties
 
       - name: Unit tests
         run: bash ./gradlew test --stacktrace
