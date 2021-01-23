@@ -6,6 +6,12 @@ apply plugin: 'dagger.hilt.android.plugin'
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'androidx.navigation.safeargs.kotlin'
 
+String getApiKey() {
+    def propFile = rootProject.file("./gradle.properties")
+    def properties = new Properties()
+    properties.load(new FileInputStream(propFile))
+    return properties['API_KEY']
+}
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
