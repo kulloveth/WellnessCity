@@ -34,12 +34,9 @@ jobs:
       - name: Access API_KEY
         env:
           API_KEY: ${{ secrets.API_KEY }}
-        run: echo API_KEY=\"$API_KEY\" > ./gradle.properties
-        
-      - name: Access androidx
-        run: echo android.useAndroidX=true > ./gradle.properties
-      
-      
+        run: echo API_KEY=\"$API_KEY\"
+             echo android.useAndroidX=true
+             > ./gradle.properties
 
       - name: Unit tests
         run: bash ./gradlew test --stacktrace
